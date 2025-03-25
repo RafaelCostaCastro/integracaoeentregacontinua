@@ -1,2 +1,2 @@
 
-console.log("Esta é uma nova feature!");
+console.log("Testando conflito na nova feature!");
