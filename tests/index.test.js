@@ -18,7 +18,7 @@ describe('GET /api/test', () => {
   });
 });
 
-/*
+
 describe('GET /api/test', () => {
   it('should return a test message', async () => {
     const res = await request(app).get('/api/test-2');
@@ -26,6 +26,6 @@ describe('GET /api/test', () => {
     expect(res.body).toHaveProperty('message', 'Endpoint de teste 2');
   });
 });
-*/
+
 
 jest.setTimeout(30000); 
