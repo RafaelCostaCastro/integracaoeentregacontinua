@@ -28,7 +28,7 @@ describe('GET /api/test', () => {
   it('should return a test message', async () => {
     const res = await request(server).get('/api/test');
     expect(res.statusCode).toEqual(200);
-    expect(res.body).toHaveProperty('message', 'Endpoint de teste'); // Ajuste conforme necessário
+    expect(res.body).toHaveProperty('message', 'Endpoint de teste'); 
   });
 });
 
