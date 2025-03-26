@@ -14,7 +14,7 @@ describe('GET /api/test', () => {
   it('should return a test message', async () => {
     const res = await request(app).get('/api/test');
     expect(res.statusCode).toEqual(200);
-    expect(res.body).toHaveProperty('message', 'Endpoint de teste na branch master com merge');
+    expect(res.body).toHaveProperty('message', 'Endpoint de teste');
   });
 });
 
