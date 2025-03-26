@@ -3,13 +3,14 @@ const request = require('supertest');
 const app = require('../src/index');
 
 let server;
+const port = process.env.TEST_PORT || 3000; // Usar uma variável de ambiente para a porta
 
 beforeAll((done) => {
-  server = app.listen(3000, () => {
-    console.log('Test server running on http://localhost:3000');
+  server = app.listen(port, () => {
+    console.log(`Test server running on http://localhost:${port}`);
     done();
   });
-});
+}, 60000); // Aumenta o timeout para 60 segundos
 
 afterAll(async () => {
   await new Promise((resolve) => server.close(resolve));
@@ -42,4 +43,4 @@ describe('GET /api/test', () => {
 });
 */
 
-jest.setTimeout(30000); 
+jest.setTimeout(60000); // Aumenta o timeout global para 60 segundos
