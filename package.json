@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/index.js",
     "build": "echo 'Building project...' && mkdir -p dist && cp -r src/* dist/",
-    "test": "jest",
+    "test": "jest --forceExit",
     "semantic-release": "semantic-release"
   },
   "release": {
