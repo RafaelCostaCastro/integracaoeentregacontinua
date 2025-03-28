@@ -18,7 +18,8 @@ app.get('/api/test-2', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(Listening http://localhost:${port});
+  console.log(`Listening on http://localhost:${port}`);
+
 });
 
 
