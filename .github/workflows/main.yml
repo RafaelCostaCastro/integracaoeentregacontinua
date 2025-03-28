@@ -18,22 +18,21 @@ jobs:
 
     - name: Install dependencies
       run: |
-        npm install  
+        npm install  # ou outro comando de instalação, dependendo do seu projeto
 
     - name: Build
       run: |
-        npm run build  
+        npm run build  # ou outro comando de build
 
     - name: Run tests
       run: |
-        npm test -- --detectOpenHandles 
+        npm test  # ou outro comando de testes
 
     - name: Send email notification
       run: |
         echo "Sending email notification..."
         echo "Subject: CI Pipeline Notification" | sendmail -v fe.dsm.vot.001@gmail.com
 
-
     - name: Versioning
       run: |
-        npm version patch  
+        npm version patch  # ou minor/major, conforme necessário
