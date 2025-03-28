@@ -31,8 +31,9 @@ jobs:
     - name: Send email notification
       run: |
         echo "Sending email notification..."
-        echo "Subject: CI Pipeline Notification" | sendmail -v fe.dsm.vot.001@gmail.com
+        # Aqui você pode usar um serviço de envio de e-mail, como SendGrid ou SMTP
 
     - name: Versioning
       run: |
         npm version patch  # ou minor/major, conforme necessário
+
