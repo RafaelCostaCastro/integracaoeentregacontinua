@@ -1,39 +1,30 @@
-name: CI Pipeline
+name: Pipeline CI
 
 on:
   push:
     branches:
       - main
+      
   pull_request:
     branches:
       - main
-
+  
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Install dependencies
-      run: |
-        npm install  # ou outro comando de instalação, dependendo do seu projeto
+      - name: Configurando Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
 
-    - name: Build
-      run: |
-        npm run build  # ou outro comando de build
+      - name: Instalando dependências
+        run: npm install
 
-    - name: Run tests
-      run: |
-        npm test  # ou outro comando de testes
-
-    - name: Send email notification
-      run: |
-        echo "Sending email notification..."
-        # Aqui você pode usar um serviço de envio de e-mail, como SendGrid ou SMTP
-
-    - name: Versioning
-      run: |
-        npm version patch  # ou minor/major, conforme necessário
+      - name: Test
+        run: npm test
 
